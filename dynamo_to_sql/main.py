@@ -8,7 +8,7 @@ import pandas as pd
 # df=transform_data(dynamo_data) #for semi structured
 
 # load_to_sql(df,"sql_table_from_dynamodb")#for semi structured
-
+#the below code for unstructured
 dynamo_data=extract_from_dynamo("doc_unstructured")
 df = transform_dynamic(pd.DataFrame(dynamo_data))
 
