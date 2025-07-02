@@ -12,6 +12,7 @@ import pandas as pd
 dynamo_data=extract_from_dynamo("doc_unstructured")
 df = transform_dynamic(pd.DataFrame(dynamo_data))
 
+df['projects'].sort_values(by='project_name', inplace=True)
 
 load_to_sql(df['projects'], "projects")
 load_to_sql(df['technologies'], "project_technologies")
