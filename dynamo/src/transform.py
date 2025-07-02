@@ -6,7 +6,7 @@ def transform_data(documents):
 
     for doc in documents:
         doc.pop("_id", None)  # Remove _id
-        doc_key = str(sorted(doc.items()))  # Convert to a hashable string
+        doc_key = str(sorted(doc.items()))  # Convert to string
         if doc_key not in seen:
             seen.add(doc_key)
             unique_docs.append(doc)
